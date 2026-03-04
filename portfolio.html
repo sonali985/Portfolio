@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Name | Developer Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    color:white;
+    overflow-x:hidden;
+}
+
+/* Floating Background Circles */
+body::before, body::after{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    background:rgba(0,255,255,0.1);
+    filter:blur(120px);
+    z-index:-1;
+}
+
+body::before{
+    top:-100px;
+    left:-100px;
+}
+
+body::after{
+    bottom:-100px;
+    right:-100px;
+}
+
+/* NAVBAR */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 10%;
+    position:sticky;
+    top:0;
+    backdrop-filter:blur(15px);
+    background:rgba(0,0,0,0.4);
+}
+
+nav h1{
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:30px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    font-weight:500;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#00f5d4;
+}
+
+/* HERO */
+header{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+header h2{
+    font-size:50px;
+}
+
+.typing{
+    color:#00f5d4;
+    border-right:3px solid #00f5d4;
+    white-space:nowrap;
+    overflow:hidden;
+    width:0;
+    animation:typing 4s steps(30,end) forwards,
+              blink 0.8s infinite;
+}
+
+@keyframes typing{
+    from{width:0}
+    to{width:320px}
+}
+
+@keyframes blink{
+    50%{border-color:transparent}
+}
+
+.btn{
+    margin-top:30px;
+    padding:12px 30px;
+    border-radius:30px;
+    background:#00f5d4;
+    color:black;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+    box-shadow:0 0 20px #00f5d4;
+}
+
+.btn:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 40px #00f5d4;
+}
+
+/* SECTIONS */
+section{
+    padding:100px 10%;
+}
+
+section h2{
+    text-align:center;
+    margin-bottom:60px;
+    font-size:32px;
+    position:relative;
+}
+
+section h2::after{
+    content:"";
+    width:60px;
+    height:4px;
+    background:#00f5d4;
+    display:block;
+    margin:10px auto;
+}
+
+/* GLASS CARD */
+.card{
+    background:rgba(255,255,255,0.05);
+    padding:30px;
+    border-radius:20px;
+    backdrop-filter:blur(20px);
+    box-shadow:0 10px 40px rgba(0,0,0,0.4);
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-15px);
+}
+
+/* ABOUT */
+.about{
+    display:flex;
+    align-items:center;
+    gap:50px;
+    flex-wrap:wrap;
+}
+
+.about img{
+    width:260px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* SKILLS */
+.skill{
+    margin-bottom:20px;
+}
+
+.skill-name{
+    margin-bottom:8px;
+}
+
+.progress{
+    background:rgba(255,255,255,0.2);
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.progress-bar{
+    height:12px;
+    background:#00f5d4;
+    width:0;
+    animation:load 2s forwards;
+}
+
+@keyframes load{
+    from{width:0}
+    to{width:90%}
+}
+
+/* PROJECTS */
+.project-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.project img{
+    width:100%;
+    border-radius:15px;
+    margin-bottom:15px;
+    transition:0.4s;
+}
+
+.project img:hover{
+    transform:scale(1.05);
+}
+
+/* CONTACT */
+.contact{
+    text-align:center;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:20px;
+    background:rgba(0,0,0,0.6);
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    header h2{
+        font-size:32px;
+    }
+    .about{
+        flex-direction:column;
+        text-align:center;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+    <h1>Your Name</h1>
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<header>
+    <h2>Hello, I'm Your Name</h2>
+    <h3 class="typing">Front-End Developer</h3>
+    <a href="#contact" class="btn">Hire Me</a>
+</header>
+
+<section id="about">
+    <h2>About Me</h2>
+    <div class="card about">
+        <img src="your-photo.jpg" alt="">
+        <div>
+            <p>I am a passionate web developer skilled in building modern and responsive websites using HTML and CSS.</p>
+            <br>
+            <p>Currently seeking an internship opportunity to grow and contribute to innovative projects.</p>
+        </div>
+    </div>
+</section>
+
+<section id="skills">
+    <h2>My Skills</h2>
+    <div class="card">
+
+        <div class="skill">
+            <div class="skill-name">HTML</div>
+            <div class="progress"><div class="progress-bar" style="width:95%"></div></div>
+        </div>
+
+        <div class="skill">
+            <div class="skill-name">CSS</div>
+            <div class="progress"><div class="progress-bar" style="width:90%"></div></div>
+        </div>
+
+        <div class="skill">
+            <div class="skill-name">JavaScript</div>
+            <div class="progress"><div class="progress-bar" style="width:75%"></div></div>
+        </div>
+
+    </div>
+</section>
+
+<section id="projects">
+    <h2>Projects</h2>
+    <div class="project-grid">
+
+        <div class="card project">
+            <img src="project1.jpg" alt="">
+            <h3>Landing Page</h3>
+            <p>Responsive landing page with modern UI.</p>
+        </div>
+
+        <div class="card project">
+            <img src="project2.jpg" alt="">
+            <h3>Portfolio Website</h3>
+            <p>Creative personal portfolio design.</p>
+        </div>
+
+        <div class="card project">
+            <img src="project3.jpg" alt="">
+            <h3>Login UI</h3>
+            <p>Animated login form interface.</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="resume" class="contact">
+    <h2>Resume</h2>
+    <div class="card">
+        <a href="resume.pdf" class="btn" download>Download Resume</a>
+    </div>
+</section>
+
+<section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <div class="card">
+        <p>Email: yourname@email.com</p>
+        <p>Phone: +1234567890</p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Your Name | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
